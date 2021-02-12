@@ -1,5 +1,12 @@
 export class Env {
     //
+    // ─── DATABASE ───────────────────────────────────────────────────────────────────
+    //
+
+    static DATABASE_URL: string | null = process.env.DATABASE_URL ? process.env.DATABASE_URL : null;
+
+    // ────────────────────────────────────────────────────────────────────────────────
+    //
     // ─── APPLICATION ────────────────────────────────────────────────────────────────
     //
 
@@ -12,6 +19,8 @@ export class Env {
     //
 
     static NODE_ENV: string = process.env.NODE_ENV ? process.env.NODE_ENV : 'dev';
+
+    // ────────────────────────────────────────────────────────────────────────────────
 }
 
 export enum PlatformNames {

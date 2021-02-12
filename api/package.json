@@ -20,17 +20,27 @@
         "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
         "test:e2e": "jest --config ./test/jest-e2e.json",
         "sdk:build": "sh ./open-api/build-sdk.sh",
-        "sdk:copy": "sh ./open-api/copy-sdk.sh"
+        "sdk:copy": "sh ./open-api/copy-sdk.sh",
+        "migration:generate": "sh ./orm/generate-migration.sh",
+        "migration:run": "sh ./orm/run-migration.sh",
+        "migration:run:all": "sh ./orm/run-all-migrations.sh",
+        "migration:revert": "sh ./orm/revert-migration.sh",
+        "migration:create": "sh ./orm/create-migration.sh"
     },
     "dependencies": {
         "@nestjs/common": "^7.0.0",
         "@nestjs/core": "^7.0.0",
         "@nestjs/platform-express": "^7.0.0",
+        "@nestjs/typeorm": "^7.1.5",
         "@nestjsx/crud": "^5.0.0-alpha.3",
         "@nestjsx/crud-typeorm": "^5.0.0-alpha.3",
+        "lodash": "^4.17.20",
+        "pg": "^8.5.1",
+        "pg-connection-string": "^2.4.0",
         "reflect-metadata": "^0.1.13",
         "rimraf": "^3.0.2",
-        "rxjs": "^6.5.4"
+        "rxjs": "^6.5.4",
+        "typeorm": "^0.2.31"
     },
     "devDependencies": {
         "@nestjs/cli": "^7.0.0",
