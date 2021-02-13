@@ -1,5 +1,6 @@
-import { Column, Entity } from 'typeorm';
+import { Column, Entity, OneToMany } from 'typeorm';
 import { BaseEntity } from './base.entity';
+import { Section } from './section.entity';
 
 @Entity('stores')
 export class Store extends BaseEntity {
@@ -7,4 +8,7 @@ export class Store extends BaseEntity {
         type: 'varchar',
     })
     name: string;
+
+    @OneToMany(() => Section, (section) => section.store)
+    sections: Section[];
 }
