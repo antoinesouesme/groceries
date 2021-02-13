@@ -1,14 +1,22 @@
 import { Module } from '@nestjs/common';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { withCache } from 'orm/config/orm.config';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { StoresController } from './stores/stores.controller';
-import { SectionsController } from './sections/sections.controller';
-import { ItemsController } from './items/items.controller';
-import { DishesController } from './dishes/dishes.controller';
+import { DishesModule } from './dishes/dishes.module';
+import { ItemsModule } from './items/items.module';
+import { SectionsModule } from './sections/sections.module';
+import { StoresModule } from './stores/stores.module';
 
 @Module({
-    imports: [],
-    controllers: [AppController, StoresController, SectionsController, ItemsController, DishesController],
+    imports: [
+        TypeOrmModule.forRoot(withCache),
+        ItemsModule,
+        SectionsModule,
+        StoresModule,
+        DishesModule,
+    ],
+    controllers: [AppController],
     providers: [AppService],
 })
 export class AppModule {}

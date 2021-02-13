@@ -30,6 +30,7 @@ module.exports = {
         "@typescript-eslint/space-infix-ops": "off",
         "@typescript-eslint/object-curly-spacing": "off",
         "@typescript-eslint/lines-between-class-members": "off",
+        "@typescript-eslint/no-useless-constructor": "off",
         "@typescript-eslint/naming-convention": [
             "error",
             {

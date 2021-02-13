@@ -19,6 +19,6 @@ export const withCache: TypeOrmModuleOptions = {
     username: connectionOptions ? connectionOptions.user : 'root',
     password: connectionOptions ? connectionOptions.password : 'root',
     entities: [
-        join(__dirname, './**/*.entity{.ts,.js}'),
+        join(__dirname, '../../**/*.entity{.ts,.js}'),
     ],
 };
